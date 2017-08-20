@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no,email=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-status-bar-style" content="normal|black|black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <script src="js/swiper.min.js"></script>
+
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<!--头-->
+<header>
+    <div></div>
+    <div>幼儿园</div>
+    <div></div>
+</header>
+<!--中间-->
+<section>
+    <!--轮播-->
+    <div class="swiper-container lunbo">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/b1.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/b1.png" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/b1.png" alt="">
+            </div>
+        </div>
+        <!--<div class="swiper-pagination"></div>-->
+    </div>
+
+    <!--列表-->
+    <nav>
+        <ul>
+            <li>
+                <img src="images/sa12.png">
+                <p>精彩瞬间</p>
+            </li>
+            <li>
+                <img src="images/sa2.png">
+                <p href="#">精彩瞬间</p>
+            </li>
+            <li>
+                <img src="images/sa3.png">
+                <p href="#">精彩瞬间</p>
+            </li>
+            <li><img src="images/sa4.png">
+                <p href="#">精彩瞬间</p>
+            </li>
+            <br>
+            <li>
+                <img src="images/sa5.png">
+                <p href="#">精彩瞬间</p>
+            </li>
+            <li>
+                <img src="images/sa6.png">
+                <p href="#">精彩瞬间</p>
+            </li>
+            <li>
+                <img src="images/sa7.png">
+                <p href="#">精彩瞬间</p>
+            </li>
+            <li>
+                <img src="images/sa8.png">
+                <p href="#">精彩瞬间</p></li>
+            <br>
+
+            <li>
+                <img src="images/sa9.png">
+                <p href="#">精彩瞬间</p>
+            </li>
+            <li>
+                <img src="images/sa10.png">
+                <p href="#">精彩瞬间</p>
+            </li>
+            <li>
+                <img src="images/sa11.png">
+                <p href="#">精彩瞬间</p>
+            </li>
+            <li>
+                <img src="images/sa12.png">
+                <p>精彩瞬间</p>
+            </li>
+        </ul>
+    </nav>
+</section>
+<!--底部-->
+<footer>
+    <p><a href="#"><img src="images/f1.png"><br>发现</a> </p>
+    <p><a href="#"><img src="images/f2.png"><br>幼儿园</a></p>
+    <p><a href="#"><img src="images/f3.png"><br>安全</a> </p>
+    <p><a href="#"><img src="images/f4.png"><br>我的</a></p>
+    <p><a href="#"><img src="images/f5.png"><br>聊天</a></p>
+</footer>
+</body>
+<script src="js/rem.js"></script>
+<script>
+    new Swiper(".lunbo",{
+        autoplay:1000,
+        pagination:".swiper-pagination",
+        paginationClickable:true,
+        autoplayDisableOnInteraction:false,
+        loop:true
+
+    })
+</script>
+
+</html>

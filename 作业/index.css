@@ -1,0 +1,238 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "微软雅黑";
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+a {
+	text-align: center;
+	color: #FFF;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+.clearfix {
+	clear: both;
+}
+
+header {
+	padding: 32px 0;
+	background: limegreen;
+	width: 100%;
+	position: relative;
+}
+
+.container {
+	padding: 0 15px;
+}
+
+div.logo {
+	position: absolute;
+	top: 0;
+	right: 10%;
+}
+
+nav ul li {
+	float: left;
+	margin: 0 40px;
+}
+
+nav ul a {
+	font-size: 1.25em;
+	font-weight: 500;
+}
+
+nav input,
+.menu {
+	position: absolute;
+	left: 3%;
+	top: 17px;
+	display: none;
+}
+
+.banner {
+	width: 100%;
+	height: 600px;
+	background: url(素材/banner.jpg) no-repeat 0 0;
+	background-size: cover;
+}
+
+.banner-info {
+	width: 30%;
+	background: rgba(255, 255, 255, .5);
+	padding: 30px;
+	float: right;
+	margin-top: 300px;
+	margin-right: 15px;
+}
+
+.banner-info h3 {
+	font-size: 1.5em;
+	color: green;
+}
+
+.banner-info p {
+	margin: 20px 0;
+	font-size: 0.9em;
+	line-height: 1.5em;
+}
+
+.banner-info a {
+	padding: 6px 14px;
+	background: limegreen;
+}
+
+.mission {
+	background: lightyellow;
+	width: 100%;
+	padding: 50px 15px;
+}
+
+.mission>h3 {
+	color: green;
+	font-size: 2em;
+	text-align: center;
+}
+
+.mission-con {
+	margin-top: 20px;
+}
+
+.mission-left {
+	width: 48%;
+	float: left;
+}
+
+.mission-right {
+	width: 50%;
+	float: right;
+}
+
+.list {
+	margin-bottom: 20px;
+}
+
+.list-left {
+	width: 15%;
+	float: left;
+}
+
+.list-left img {
+	width: 100%;
+}
+
+.list-right {
+	width: 80%;
+	float: right;
+}
+
+.list-right h3 {
+	color: green;
+	margin-bottom: 15px;
+}
+
+.footer{
+	padding: 18px 0;
+	background: #7ddf6c;
+}
+.footer p{
+	margin: 9px 0 0 0;
+	font-size: 0.875em;
+	color: #fff;
+	text-align: center;
+}
+.footer p a{
+	color: #fff;
+}
+.footer p a:hover,.footer p a.active{
+	color: #000;
+}
+
+@media only screen and (max-width: 1024px) {
+	nav ul li {
+		margin: 0 20px;
+	}
+	nav ul li a {
+		font-size: 1em;
+	}
+	div.logo {
+		width: 15%;
+		right: 5%;
+	}
+	.banner {
+		height: 500px;
+	}
+	.banner-info {
+		margin-top: 200px;
+		width: 40%;
+	}
+	.banner-info h3 {
+		font-size: 1.25em;
+	}
+	.banner-info p {
+		font-size: 0.8em;
+	}
+	.banner-info a {
+		font-size: 0.875em;
+	}
+	.mission>h3 {
+		font-size: 2em;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	header {
+		padding: 25px 0;
+	}
+	nav ul li a {
+		font-size: 1em;
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	.menu {
+		display: block;
+	}
+	nav ul {
+		display: none;
+	}
+	nav input:checked+ul {
+		display: block;
+	}
+	nav ul li {
+		float: none;
+		text-align: center;
+		margin-top: 10px;
+	}
+	.banner {
+		height: 300px;
+	}
+	.banner-info {
+		width: 55%;
+		margin-top: 70px;
+		padding: 15px;
+	}
+	.mission-left {
+		width: 100%;
+		float: none;
+		margin-bottom: 20px;
+	}
+	.mission-right {
+		width: 100%;
+		float: none;
+	}
+	
+	.footer p{
+		margin: 0px 0 20px 0;
+	}
+}

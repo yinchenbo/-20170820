@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">-->
+    <!--优先使用IE最新版本和Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chome=1" />
+    <!--视口--设备宽度--初始缩放比例--最小缩放比例--最大缩放比例--用户缩放-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <!--禁止浏览器自动的识别-电话号码-email--->
+    <meta name="format-detection" content="telephone=no,email=no"/>
+    <!--是否启用Web全屏-->
+    <meta name="apple-mobile-web-app-capable" content='yes' />
+    <meta name="apple-mobile-web-status-bar-style" content="normal|black|black-translucent">
+    <!--设置苹果工具栏颜色-->
+    <meta name="apple-mobile-web-app-status-bar-style" content='black' />
+
+    <link rel="stylesheet" href="css/index.css">
+    <title>Title</title>
+</head>
+<body>
+    <div class="zhu">
+        <header>
+            <!--<img src="img/t_01.jpg" alt="">-->
+            <div class="tou">
+                <img src="img/a14151-2.png" alt="">
+                <img src="img/asc151-3.png" alt="">
+            </div>
+        </header>
+        <div class="box1" style="background: url(img/bj1.png) no-repeat ;background-size: 100% 2.58rem">
+            <img src="img/asdasd-1.png" alt="">
+            <p>哇哈哈</p>
+        </div>
+
+        <div class="box2">
+           <ul>
+               <li>
+                   <span>152.00</span>
+                   <p>我的余额</p>
+               </li>
+               <li>
+                   <span>152.00</span>
+                   <p>我的优惠劵</p>
+               </li>
+               <li>
+                   <span>152.00</span>
+                   <p>我的积分</p>
+               </li>
+           </ul>
+        </div>
+
+        <div class="box3">
+            <div>
+                <img src="img/a1.png" alt="">
+                <span>我的订单</span>
+            </div>
+            <div>
+                <span>></span>
+            </div>
+        </div>
+
+        <div class="box4">
+            <div>
+                <img src="img/a2.png" alt="">
+                <span>我的订单</span>
+            </div>
+            <div>
+                <span>></span>
+            </div>
+
+        </div>
+        <div class="box5">
+            <div>
+                <img src="img/a3.png" alt="">
+                <span>我的订单</span>
+            </div>
+            <div>
+                <span>></span>
+            </div>
+
+        </div>
+        <div class="box5">
+            <div>
+                <img src="img/a4.png" alt="">
+                <span>我的订单</span>
+            </div>
+            <div>
+                <span>></span>
+            </div>
+
+        </div>
+        <div class="box6">
+            <div>
+                <img src="img/a5.png" alt="">
+                <span>我的订单</span>
+            </div>
+            <div>
+                <span>></span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <img src="img/w1.png" alt="">
+        <img src="img/w2.png" alt="">
+        <img src="img/w3.png" alt="">
+    </footer>
+</body>
+<script>
+    (function(doc, win){
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function(){
+                var clientWidth = docEl.clientWidth;
+                if(!clientWidth) return;
+                docEl.style.fontSize = 100 * (clientWidth / 375) + 'px';
+            };
+        if(!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+
+</html>

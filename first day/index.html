@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="vue/vue.min.js"></script>
+    <title></title>
+</head>
+<body>
+<div id="box">
+    {{a}}
+    <input type="text" v-model="b"/>
+</div>
+
+
+<script>
+    new Vue({
+        el: "#box",
+        data: {
+
+            a: "hello vue!",
+            b: "hello world!"
+        }
+    })
+
+    //el=document.getElementById("box")
+</script>
+</body>
+</html>

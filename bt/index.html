@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <form class="navbar-form  navbar-right">
+                <button type="submit" class="btn btn-info">参选</button>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="查询面试">
+                </div>
+                <button type="submit" class="btn btn-default">查询</button>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="请输入名字">
+                </div>
+                <button type="submit" class="btn btn-info" >查询我的评价</button>
+            </form>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div class="box">
+    <div class="row">
+
+    </div>
+</div>
+</body>
+<script src="bootstrap-3.3.7-dist/js/jquery-3.1.1.min.js"></script>
+<script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+<script>
+   $.ajax({
+       type:"get",
+       url:"http://47.92.37.168/php/index.php?C=Login&M=voteList",
+       async:true,
+       dataType:"json",
+       success:function(data){
+       //获取数据得到一个对象
+        var data=data.data;
+        console.log(data)
+        var img='';
+        var html='';
+        for (var i=0; i<data.length;i++){
+            if(data[i].img!=null){
+                img='http://47.92.37.168/php/'+data[i].img;
+            }else {
+                //当图片没有加载成功，加载本地的图片
+                img='img/btn2.png';
+            }
+
+            html += ' <div class="col-md-4  content"><h4 class="t">参选人</h4>' +
+                '<div class="profile-top">' +
+                '<img src="'+img+'" alt="">' +
+                '<p>'+data[i].username+'</p>' +
+                '<span>收到'+data[i].number+'个offer</span></div>' +
+                '<div class="profile-b"><div>' +
+                '<p>个人简历：</p>' +
+                '<p>'+data[i].introduce+'</p>' +
+                '</div><div>' +
+                '<p>技术特长</p>' +
+                '<p>'+data[i].strong+'</p></div><div>' +
+                '</div> ' +
+                '<button class="btn btn-primary" style="margin:0 80px ">建议</button>' +
+                '<button class=" btn btn-primary">录用</button></div></div>' +
+                '</div>'
+        }
+        $('.box .row').html(html)
+       }
+   })
+</script>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery-2.0.0.min.js"></script>
+
+    <script src="js/bootstrap.js"></script>
+
+    <style>
+
+        .profile{
+            height: 400px;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 0;
+        }
+        .title3{
+            background-color: blue;
+            height: 30px;
+            line-height: 30px;
+            margin-bottom: 0;
+            color: white;
+            text-align: left;
+        }
+        .profile-top{
+            height: 150px;
+            background-color: #1b6d85;
+        }
+        .profile-top img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .profile-text{
+            text-align: left;
+        }
+
+        #file2 {
+            padding: 50px;
+        }
+
+        #file1 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            /*top:100px;*/
+            overflow: hidden;
+            opacity: 0;
+            top: 20%;
+            left: 40%;
+            z-index: 1000;
+        }
+
+        .imgupload {
+            position: absolute;
+            top: 20%;
+            left: 40%;
+        }
+
+        .myp {
+            position: absolute;
+            font-size: 20px;
+            font-weight: 600;
+            color: #FFFFFF;
+            top: 35%;
+            left: 41%;
+        }
+
+
+    </style>
+</head>
+<body >
+
+<div class="container">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="btn btn-primary"  data-toggle="modal" data-target="#cxm" role="button">参选人</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control find" placeholder="查找面试者">
+                    </div>
+                    <button type="submit" class="btn btn-default cx">查询</button>
+                    <div class="form-group">
+                        <input type="text" class="form-control chaktext" placeholder="请输入名字">
+                    </div>
+                    <button type="submit" class="btn btn-default chak" data-toggle="modal" data-target="#example">查看评价</button>
+                </form>
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="modal fade" id="example" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                </div>
+                <div class="modal-body abc">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<div id="box" class="row">
+
+</div>
+
+    <!--参选模态框-->
+    <div class="modal fade Run-button" id='cxm' tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+                </div>
+                <div class="run-individual">
+
+                    <form class="myform" style="width: 400px;height: 100%;margin: 0 auto;padding-bottom: 20px;margin-top: 20px;">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">姓名：</label>
+                            <input class="form-control" id="cx_name" placeholder="姓名">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">个人简介</label>
+                            <textarea class="form-control" id="cx_grjj" placeholder="个人简介" style="max-width: 400px;"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">技术特长</label>
+                            <textarea class="form-control" id="cx_jstc" placeholder="技术特长" style="max-width: 400px;"></textarea>
+                        </div>
+                        <button class="btn btn-default" id="canxuan">提交</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+   <!--模态框-->
+    <div class="modal fade bs" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">您的建议</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">建议:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary tj">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    var date_this=null;
+    var jyid = '';
+    $.ajax({
+        type: "get",
+        url: "http://47.92.37.168/php/index.php?C=Login&M=voteList",
+        async: true,
+        dataType: "json",
+        success: function(data) {
+            date_this=data;
+            		console.log(data);
+            $('#box').empty()
+            var html = '';
+            var img ='';
+            for(var i = 0; i < data.data.length; i++) {
+                if(data.data[i].img!=null){
+                    img='http://47.92.37.168/php/'+data.data[i].img;//
+                }else{
+                    img='img/11.jpg';
+                }
+                html += '<div class="col-md-4 profile widget-shadow content">'+
+                    '<h4 class="title3">参选人</h4>'+
+                    '<div class="profile-top">'+
+                    '<img src="'+img+'" alt="">'+
+                    '<h4>'+ data.data[i].username+'</h4>'+
+                    '<h5>已经收到'+data.data[i].number+'个offer</h5>'+
+                    '</div>'+
+
+                    '<div class="profile-text">'+
+                    '<h4>个人简介：</h4>'+
+               ' <p class="gun">'+data.data[i].introduce+'</p>'+
+                '<div style="height: 30px;"></div>'+
+                    '<h4>技术特长:</h4>'+
+                '<p class="gun">'+data.data[i].strong+'</p>'+
+                    "</div>"+
+                    '<div class="profile-btm conter-jianyi">'+
+                    '<button type="button" class="btn btn-primary button bt" data-toggle="modal" data-target=".bs">建议</button>'+
+                    '<button type="button" class="btn btn-primary button">录用</button>'+
+                    '</div>'+
+                    '</div>'
+            }
+            $('#box').append(html);
+
+            $(".bt").click(function () {
+               jyid=data.data[$(this).index()].username;
+
+            })
+        }
+
+    });
+
+
+
+    
+    $(".tj").click(function () {
+        console.log(111)
+        $.ajax({
+            type: "post",
+            url: "http://47.92.37.168/php/index.php?C=Login&M=suggest",
+            async: true,
+            dataType: 'json',
+            data:{
+              suggest:$("#message-text").val(),
+               id:jyid
+            },
+            success: function(data) {
+                if(data.code == 200) {
+                    alert('感谢您的评价，我将再接再厉!');
+                    $('#myModal').modal('hide');
+                }
+            }
+
+            
+        })
+    })
+
+$(".cx").click(function () {
+    $.ajax({
+        type: "post",
+        url: "http://47.92.37.168/php/index.php?C=Login&M=findUser",
+        async: true,
+        dataType:'json',
+        data: {
+            'username': $('.find').val()
+        },
+        success:function (data) {
+            console.log(data);
+            if(data.code==200){
+                $("#box").html("");
+
+                var img="";
+                if(data.data[0].img!==null){
+                    img="http://47.92.37.168/php/"+data.data[0].img
+                }else {
+                    img="img/11.jpg"
+                }
+
+                var html='<div class="col-md-4 profile widget-shadow content">'+
+                    '<h4 class="title3">参选人</h4>'+
+                    '<div class="profile-top">'+
+                    '<img src="'+img+'" alt="">'+
+                    '<h4>'+ data.data[0].username+'</h4>'+
+                    '<h5>已经收到'+data.data[0].number+'个offer</h5>'+
+                    '</div>'+
+
+                    '<div class="profile-text">'+
+                    '<h4>个人简介：</h4>'+
+                    ' <p class="gun">'+data.data[0].introduce+'</p>'+
+                    '<div style="height: 30px;"></div>'+
+                    '<h4>技术特长:</h4>'+
+                    '<p class="gun">'+data.data[0].strong+'</p>'+
+                    "</div>"+
+                    '<div class="profile-btm conter-jianyi">'+
+                    '<button type="button" class="btn btn-primary button bt" data-toggle="modal" data-target=".bs">建议</button>'+
+                    '<button type="button" class="btn btn-primary button">录用</button>'+
+                    '</div>'+
+                    '</div>';
+
+                $("#box").html(html);
+
+            }
+
+
+
+
+
+        }
+
+
+
+    })
+})
+
+    $(".chak").click(function () {
+        $.ajax({
+            type: "post",
+            url: "http://47.92.37.168/php/index.php?C=Login&M=findSuggest",
+            async: true,
+            dataType: 'json',
+            data: {
+                'id': $('.chaktext').val() //查询密码  （用户注册面试后返回的用户id）
+            },
+            success:function (data) {
+                var html="";
+                for (var i=0;i<data.data.length;i++){
+                    html+='<li>'+data.data[i].suggest+"</li>"
+                }
+                $(".abc").html(html)
+
+
+            }
+        })
+    })
+
+
+    //参选者信息
+    $('#canxuan').click(function() {
+        //	console.log(encodeURI($('#strong').val()))
+        $.ajax({
+            type: "post",
+            url: "http://47.92.37.168/php/index.php?C=Login&M=vote",
+            async: true,
+            dataType: "json",
+            data: {
+                'username': $('#cx_name').val(),
+                'introduce': $('#cx_grjj').val(),
+                'strong': $('#cx_jstc').val()
+            },
+            success: function(data) {
+                console.log(data)
+                if(data.code == 200) {
+                    alert("参选成功");
+                    //$('#btn_canxuan').click()
+                    $('.sctx')[0].style.display='block';
+                    $('.myform')[0].style.display='none';
+//				location.reload();
+// 				userid=data.data;
+//				alert(userid);
+                }
+            }
+        });
+        return false;
+    })
+
+
+
+</script>
+
+</body>
+</html>

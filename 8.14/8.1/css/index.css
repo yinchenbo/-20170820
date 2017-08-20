@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body, html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column; }
+
+a {
+  text-decoration: none; }
+
+ul, li {
+  list-style: none; }
+
+img {
+  max-width: 100%; }
+
+header, footer {
+  width: 100%;
+  background: #393A3e;
+  height: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: #ffffff; }
+
+header div:nth-of-type(1) img {
+  width: 0.8rem;
+  height: 0.6rem; }
+header div:nth-of-type(3) img {
+  width: 0.5rem;
+  height: 0.6rem; }
+
+footer {
+  background: #fff; }
+  footer img {
+    width: 0.5rem; }
+
+section {
+  flex-flow: 1;
+  overflow: scroll; }
+
+.tx {
+  width: 100%;
+  background: url("../images/bj1.png") no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  padding-bottom: 0.7rem; }
+  .tx img {
+    margin-top: 0.64rem; }
+  .tx p {
+    color: #fff;
+    padding-top: 0.32rem;
+    font-weight: 500;
+    font-size: 0.4rem; }
+
+nav {
+  width: 100%;
+  background: #fff;
+  height: 2.2rem;
+  padding: 0.5rem 0;
+  text-align: center;
+  border-bottom: 0.2rem solid #EEECED;
+  display: flex;
+  justify-content: space-between; }
+  nav p {
+    width: 3rem;
+    text-align: center;
+    border-right: 0.03rem solid #E6E6E6;
+    text-align: center;
+    line-height: 0.42rem;
+    font-size: 0.24rem;
+    color: #787878; }
+  nav p:last-child {
+    border-right: none; }
+
+.list {
+  width: 100%;
+  background: #EEECED;
+  padding: 0.12rem 0; }
+  .list ul {
+    width: 100%;
+    background: #EEECED; }
+    .list ul li {
+      line-height: 1rem;
+      background-color: #fff;
+      background-size: 0.6rem 0.6rem;
+      background-repeat: no-repeat;
+      background-position: 0.8rem center;
+      text-indent: 2.1rem;
+      font-size: 0.24rem; }
+      .list ul li a {
+        color: #787878; }
+    .list ul li:nth-of-type(1) {
+      margin-bottom: 0.2rem;
+      background-image: url(../images/a1.png); }
+    .list ul li:nth-of-type(2) {
+      margin-bottom: 0.03rem;
+      background-image: url(../images/a2.png); }
+    .list ul li:nth-of-type(3) {
+      margin-bottom: 0.03rem;
+      background-image: url(../images/a3.png); }
+    .list ul li:nth-of-type(4) {
+      margin-bottom: 0.2rem;
+      background-image: url(../images/a4.png); }
+    .list ul li:nth-of-type(5) {
+      background-image: url(../images/a5.png); }
+    .list ul li i {
+      float: right;
+      margin-right: 0.2rem; }
+
+/*# sourceMappingURL=index.css.map */

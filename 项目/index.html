@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="bootstrap/js/jquery-3.1.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <title>Title</title>
+    <style>
+        .tu img{
+            width: 158px;
+            height: 158px;
+        }
+        .zong{
+            height: 500px;
+        }
+        #ww{
+            padding: 30px;
+        }
+        .tt{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default tou">
+    <form class="navbar-form navbar-right form1" role="search">
+        <button type="button" class="btn btn-info">参选</button>
+
+        <div class="form-group">
+            <input type="text" class="form-control txt"  placeholder="查找面试者">
+        </div>
+        <button type="button" class="btn btn-default search">查询</button>
+
+        <div class="form-group">
+            <input type="text" class="form-control pj-text" placeholder="请输入名字">
+        </div>
+        <button type="button" class="btn btn-primary pj" data-toggle="modal"  data-target=".bs-example-modal-lg" >
+            查看我的评价
+        </button>
+    </form>
+</nav>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" id="ww">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <ul class="tt">
+                <!--<li>外煎熬  </li>-->
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- Button trigger modal -->
+<!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">-->
+    <!--Launch demo modal-->
+<!--</button>-->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <input type="text"  class="form-control tjtet">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary tj">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="row">
+
+    </div>
+
+
+
+</body>
+<script>
+    var tjid=""
+    $.ajax({
+        url:"http://47.92.37.168/php/index.php?C=Login&M=voteList",
+        type:"GET",
+        async: true,
+        dataType:"json",
+        success: function(data) {
+            		//	console.log(data);
+            $('#cxr_zhanshi').empty()
+            var html = '';
+            var img ='';
+            for(var i = 0; i < data.data.length; i++) {
+                if(data.data[i].img != null){
+                    img='http://47.92.37.168/php/'+data.data[i].img;
+                }else{
+                    img='../bootstrap练习/img/3.jpg';
+                }
+
+
+                html +='<div class="col-lg-4 col-md-4 col-sm-12 zong">'+
+                    '<div class="thumbnail tu">'+
+                    '<div class="h3">参选人</div>'+
+                    '<img src="'+img+'"  style="border-radius: 50% 50% 50% 50%">'+
+                    '<div class="caption">'+
+                     '<p>' + data.data[i].username + '</p>'+
+                     '<p>收到' + data.data[i].number + '个offer</p>'+
+                     '<p class="h4">个人简介：</p>'+
+                     '<p>' + data.data[i].introduce + '</p>'+
+                     '<p class="h4">技术特长:</p>'+
+                     '<p>' + data.data[i].strong + '</p>'+
+                     '<p><a href="#" class="btn btn-primary jian" role="button" data-toggle="modal" data-target="#myModal">建议</a> <a href="#" class="btn btn-default" role="button">录用</a></p>'+
+                    '</div>'+
+                    '</div>'+
+                    '</div>'
+            }
+            $('.row').html(html);
+//
+
+
+            $('.jian').each(function(index){
+                $(this).click(function(){
+                    tjid=data.data[index].username;
+                    console.log(tjid)
+                })
+            })
+        }
+//
+
+
+    })
+
+//
+    
+    
+
+    $(".pj").click(function () {
+        $.ajax({
+            type: "post",
+            url: "http://47.92.37.168/php/index.php?C=Login&M=findSuggest",
+            async: true,
+            dataType: 'json',
+            data: {
+                'id': $('.pj').val() //查询密码  （用户注册面试后返回的用户id）
+            },
+            success:function (data) {
+                console.log(data)
+                var html='';
+                for(var i = 0; i < data.data.length; i++) {
+                    html +='<li>'+data.data[i].suggest+'</li>'
+                }
+                $('aa').html(html)
+            }
+        })
+    })
+
+    $('.search').click(function () {
+        $.ajax({
+            type: "post",
+            url: "http://47.92.37.168/php/index.php?C=Login&M=findUser",
+            async: true,
+            dataType:'json',
+            data: {
+                'username': $('.txt').val()
+            },
+            success:function (data) {
+                console.log(data)
+                $('.row').html('  ');
+
+
+                var html = '';
+                var img ='';
+//                for(var i = 0; i < data.data.length; i++) {
+                    if(data.data[0].img != null){
+                        img='http://47.92.37.168/php/'+data.data[0].img;
+                    }else{
+                        img='img/3.jpg';
+                    }
+
+
+                    html +='<div class="col-lg-4 col-md-4 col-sm-12 zong">'+
+                        '<div class="thumbnail tu">'+
+                        '<div class="h3">参选人</div>'+
+                        '<img src="'+img+'"  style="border-radius: 50% 50% 50% 50%">'+
+                        '<div class="caption">'+
+                        '<p>' + data.data[0].username + '</p>'+
+                        '<p>收到' + data.data[0].number + '个offer</p>'+
+                        '<p class="h4">个人简介：</p>'+
+                        '<p>' + data.data[0].introduce + '</p>'+
+                        '<p class="h4">技术特长:</p>'+
+                        '<p>' + data.data[0].strong + '</p>'+
+                        '<p><a href="#" class="btn btn-primary" role="button">建议</a> <a href="#" class="btn btn-default" role="button">录用</a></p>'+
+                        '</div>'+
+                        '</div>'+
+                        '</div>'
+                $('.row').html(html);
+                }
+
+//            }
+
+        })
+    })
+
+    $(".pj").click(function () {
+        $.ajax({
+            type: "post",
+            url: "http://47.92.37.168/php/index.php?C=Login&M=findSuggest",
+            async: true,
+            dataType: 'json',
+            data: {
+                'id': $('.pj-text').val() //查询密码  （用户注册面试后返回的用户id）
+            },
+            success:function (data) {
+//                console.log(data.data)
+                var nr=" "
+                for(var i=0;i<data.data.length;i++){
+                      nr+='<li>'+data.data[i].suggest+'</li>'
+                }
+                $(".tt").html(nr)
+            }
+        })
+    })
+
+
+
+    $(".tj").click(function () {
+        $.ajax({
+            type: "post",
+            url: "http://47.92.37.168/php/index.php?C=Login&M=suggest",
+            async: true,
+            dataType: "json",
+            data: {
+                'suggest': $('.tjtet').val(),
+                'id': tjid
+            },
+            success: function (data) {
+                console.log(data)
+                if(data.code==200){
+                    alert("ok,提交成功")
+                }
+            }
+
+        })
+    })
+
+</script>
+</html>

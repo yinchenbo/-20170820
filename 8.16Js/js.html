@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="text" class="text" title="标题" style="background: red">
+    hello world !
+
+    <!--<span> hello javascript!</span>-->
+    <span>hello js</span>
+
+    <i> hello italic</i>
+
+</p>
+
+</body>
+</html>
+<script>
+
+
+
+    /*
+     Boolean() 把任意数据类型 转换成布尔值
+
+     Number     0,NaN
+     String     ""
+     Null       null
+     Undefined   undefined
+     Boolean      false
+     所有引用数据类型 布尔转换结果都是true
+
+
+
+     获取元素 4种方法
+
+     var oP=document.querySelector("#text");
+     document.querySelectorAll("p")[0];
+     document.querySelector(".text")
+
+     document.querySelector("#text").style.background="red"
+
+
+
+     var ele=document.querySelector("#text")
+     console.log( ele.nodeName,ele.nodeType,ele.nodeValue);
+
+     var att=ele.attributes.id;
+     console.log(att.nodeName,att.nodeType,att.nodeValue);
+
+     var text=ele.childNodes[0];
+     console.log(text.nodeName,text.nodeType,text.nodeValue);
+
+     var com=ele.childNodes[1];
+     console.log(com.nodeName,com.nodeType,com.nodeValue)
+
+     DOM的增删改查
+
+     var oP=document.getElementById("text");
+     //创建元素
+     var span=document.createElement("span")
+
+     //       span.innerText="hello beijing";
+     //       span.textContent="hello beijing";
+     //       span.innerHTML="hello beijing"
+
+     var txt=document.createTextNode("hello beijing");
+
+     span.appendChild(txt);
+     oP.appendChild(span);
+
+     var oP=document.getElementById("text");
+     oP.removeChild(document.querySelector("#text span"))
+
+
+
+
+
+
+
+     var oP=document.getElementById("text");
+     //      var p=document.createElement("p");
+     var oi=document.querySelector("#text i");
+     var oS=document.querySelector("#text span");
+     oP.replaceChild(oi,oS)
+
+
+
+     var oP=document.getElementById("text");
+     //      var p=document.createElement("p");
+     var oi=document.querySelector("#text i").cloneNode(true);
+     var oS=document.querySelector("#text span")
+     oP.insertBefore(oi,oS)
+
+
+
+     var oP=document.getElementById("text");
+     //      var p=document.createElement("p");
+     var oi=document.querySelector("#text i").cloneNode(true);
+     var oS=document.querySelector("#text span")
+     oP.insertBefore(oi,oS)
+
+     */
+
+    var oP=document.querySelector("#text");
+    oP.addEventListener("click",fn,false)
+
+    function fn(e) {
+        var e=e||window.event;//事件对象兼容
+        e.target||e.srcElement;//目标对象
+
+
+
+        try {
+            e.preventDefault();    //阻止默认行为
+        }catch (a){
+            e.returnValue=false;
+        }
+
+
+        e.stopPropagation();   //阻止事件传播（阻止冒泡行为）
+        e.cancelBubble=false;
+
+
+
+    }
+
+
+</script>

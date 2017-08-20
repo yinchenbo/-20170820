@@ -1,0 +1,95 @@
+*{
+    padding:0;
+	margin:0;
+	font-size: 0.43rem;
+    text-decoration: none;
+    font-style: normal;
+    color: #818181;
+   font-family: 微软雅黑;
+}
+img,input,label{
+	vertical-align: middle;
+}
+body{
+   background:#000;
+}
+#zhu{
+   width:100%;      
+   background: #fff;
+}
+header{
+  width: 100%;
+  background: #3496E1;
+  text-align: center;
+  line-height: 1.79rem;
+  color: #fff;
+  ;font-size: 1rem;
+}
+/*广告*/
+#banner{
+  width: 100%;
+  height: 9.89rem;
+  background-color: #151411; 
+  background-size: 100% 100%;
+  background-repeat:  no-repeat ;
+  background-image: url(images/dsd-5.jpg);
+  border-bottom:0.28rem solid #BFBFBF;
+  text-align: center;
+}
+#banner a{
+  display: inline-block;
+  width: 0.3rem;
+  height: 0.3rem;
+  border-radius: 50%;
+  background: #BFBFBF;
+  margin: 9.3rem 0.2rem 0 0.2rem;
+}
+#banner a:hover{
+  background:#fff;
+}
+/*分类*/
+figure{
+  width: 100%;             
+  padding: 2rem 0;
+}
+figure ul{
+  list-style: none;
+  width: 100%;
+  text-align: center;
+}
+figure ul li{
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.65rem;        
+  margin:0.5rem 0.7rem;
+}
+figure ul li img{
+  width: 1.69rem;
+  margin-bottom: 0.2rem;
+}
+figure ul li a{
+  text-decoration: underline;
+}
+/*底部 */
+footer{
+  width: 100%;
+  height: 2.1rem;                
+  border-top: 0.1rem solid #EDEDED;
+  text-align: center;
+}
+footer a{
+  display: inline-block;
+  width: 2.11rem;        
+  height: 0.87rem;
+  padding-top: 1rem;
+  
+  background-size: 1.03rem 0.84rem;
+  background-repeat:  no-repeat ;
+  background-image: url(images/f1.png);
+ background-position: top center;
+ margin: 0.2rem 0.4rem 0 0.4rem;
+}
+footer a:hover{
+  color: #08BAFA;
+  background-image: url(images/ass24.png);
+}
